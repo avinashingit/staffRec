@@ -1,0 +1,12 @@
+ 
+ @font-face{
+ 	font-family:opensans;
+ 	src: url('/staffRec/includes/fonts/Opensans/OpenSans-Light.ttf');
+ }
+
+ body
+ {
+ 	font-family:opensans !important;
+ 	font-weight: lighter;
+ 	background-color:white !important;
+ }
