@@ -447,8 +447,16 @@ function fillPersonalDetails(data)
 	link.find("#currentPhone").val(currentAddress[2]);
 	link.find("#currentEmail").val(currentAddress[3]);
 	//pmasaca
-	var element=$("#pmasaca");
-	var pmasaca=element.is(":checked");
+	var element=link.find("#pmasaca");
+	if(data.currSameAsPerm==1)
+	{
+		element.prop('checked',true);
+	}
+	else
+	{
+		element.prop('checked',false);
+	}
+	
 
 	var permanentAddress=data.permanentAddress.split("$%^");
 	link.find("#permanentAddressLine1").val(permanentAddress[0]);
