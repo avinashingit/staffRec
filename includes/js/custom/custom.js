@@ -449,6 +449,19 @@ function fillPersonalDetails(data)
 	link.find("#currentAddressLine2").val(currentAddress[1]);
 	link.find("#currentPhone").val(currentAddress[2]);
 	link.find("#currentEmail").val(currentAddress[3]);
+<<<<<<< HEAD
+=======
+	//pmasaca
+	var element=link.find("#pmasaca");
+	if(data.currSameAsPerm==1)
+	{
+		element.prop('checked',true);
+	}
+	else
+	{
+		element.prop('checked',false);
+	}
+>>>>>>> origin/master
 	
 
 	var permanentAddress=data.permanentAddress.split("$%^");
