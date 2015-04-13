@@ -49,6 +49,20 @@
 
 					</div>
 
+					<br/><br/>
+
+					<div class="form-group">
+
+						<label class="control-label col-md-3">Your username</label>
+
+						<div class="col-md-9">
+
+							<input id="usernameFP" class="form-control" type="text">
+
+						</div>
+
+					</div>
+
 					<br/>
 
 					<button class="btn btn-danger btn-md" onclick="sendLink(event)">Send link</button>

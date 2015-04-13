@@ -21,7 +21,34 @@
 
 </div>
 
-<div class="modal about">
+</body>
+
+
+	 <!-- Twitter Bootstrap -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<!-- Material js -->
+	<script src="includes/js/material/material.min.js" type="text/javascript"></script>
+	<script src="includes/js/material/ripples.min.js" type="text/javascript"></script>
+	
+
+	<script>
+
+		$.material.init();
+
+		$.material.input();
+
+
+	</script>
+
+	<!-- Dropdown.js -->
+    <script src="https://cdn.rawgit.com/FezVrasta/dropdown.js/master/jquery.dropdown.js"></script>
+    <script>
+      $("#dropdown-menu select").dropdown();
+    </script>
+
+
+
+    <div class="modal about">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -54,25 +81,4 @@
         </div>
     </div>
 </div>
-	 <!-- Twitter Bootstrap -->
-    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.min.js"></script>
-	<!-- Material js -->
-	<script src="includes/js/material/material.min.js" type="text/javascript"></script>
-	<script src="includes/js/material/ripples.min.js" type="text/javascript"></script>
-	
-
-	<script>
-
-		$.material.init();
-
-		$.material.input();
-
-
-	</script>
-
-	<!-- Dropdown.js -->
-    <script src="https://cdn.rawgit.com/FezVrasta/dropdown.js/master/jquery.dropdown.js"></script>
-    <script>
-      $("#dropdown-menu select").dropdown();
-    </script>
 

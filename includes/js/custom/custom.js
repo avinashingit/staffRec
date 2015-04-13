@@ -1393,16 +1393,18 @@ function sendLink(e)
 {
 	e.preventDefault();
 
+	var username=$("#FPForm").find("#usernameFP").val().trim();
 	var email=$("#FPForm").find("#emailFP").val().trim();
 
 	$.post('sendPLink.php',{
+		_username:username,
 		_email:email
 	})
 	.error()
 	.success(function(data){
 		if(checkData(data)==1)
 		{
-			alert("Send password link.");
+			alert("Reset password link sent to your registered mail.");
 		}
 	});
 }
