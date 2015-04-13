@@ -49,7 +49,7 @@
 
 		if(isset($_SESSION['oi']))
 		{
-			echo '<p class="text-center" style="color:red;">All fields are required.Category certificate is not needed for GEN. Upload disability certificate if physically disabled.</p>';
+			echo '<p class="text-center" style="color:red;">All fields are required.Category certificate is not needed for GEN. Upload disability certificate if physically disabled. Your photo should be jpg file and all certificates should be pdf files.</p>';
 		}
 
 	?>

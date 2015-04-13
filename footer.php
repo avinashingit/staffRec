@@ -2,7 +2,7 @@
 
 	<div class="col-md-2 text-center">
 
-		<button class="btn btn-fab btn-md btn-info" title="About us"><i class="fa fa-info"></i></button>
+		<button class="btn btn-fab btn-md btn-info" title="About us" onclick="$('.about').modal('show');"><i class="fa fa-info"></i></button>
 
 	</div>
 
@@ -14,13 +14,46 @@
 
 	<div class="col-md-2 col-md-offset-2 text-center">
 
-		<button class="btn btn-fab btn-md btn-success" title="Contact us"><i class="fa fa-envelope"></i></button>
+		<button class="btn btn-fab btn-md btn-success" title="Contact us" onclick="$('.contact').modal('show');"><i class="fa fa-envelope"></i></button>
 
 	</div>
 
 
 </div>
 
+<div class="modal about">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                <h4 class="modal-title">About us</h4>
+            </div>
+            <div class="modal-body">
+                <p>IIITD&M Kancheepuram</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal contact">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+                <h4 class="modal-title">Contact</h4>
+            </div>
+            <div class="modal-body">
+                <p>IIITD&M Kancheepuram</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 	 <!-- Twitter Bootstrap -->
     <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.2/js/bootstrap.min.js"></script>
 	<!-- Material js -->
