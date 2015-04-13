@@ -49,7 +49,7 @@
 
 				$message.="Your registration for IIITD&M Staff recruitment portal is successfull. Please click on the following link to confirm your identity<br/><br/>";
 
-				$message.="http://".$_SERVER['REMOTE_ADDR']."/staffRec/confirm.php?token=".hash("sha512",$username."1405".$email."1730");
+				$message.="http://172.16.1.251/staffRec/confirm.php?token=".hash("sha512",$username."1405".$email."1730");
 
 				if(sendMail($email,$message))
 				{
