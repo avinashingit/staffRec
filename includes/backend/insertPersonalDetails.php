@@ -26,9 +26,8 @@
 		$dob=removeUnwanted($_POST['_dob']);
 		if(validateDOB($dob)!=1)
 		{
-			echo 999;
+			echo 1001;
 			$error=1;
-			session_destroy();
 			exit();
 		}
 		$nationality=removeUnwanted($_POST['_nationality']);
@@ -126,31 +125,32 @@
 		$temp=explode(".",$_FILES["_photo"]["name"]);
 		if($_FILES["_photo"]["name"]!="")
 		{
-			if(end($temp)!='jpg' && end($temp)!='jpeg' && end($temp)!='png')
+			if(end($temp)!='jpg')
 			{
 				echo 103;
 				exit();
 			}
-		}
 		
 		
-		$target_file = $target_dir . $userId."_photo".".".end($temp);
-		$photo=$target_file;
-		$uploadOk = 1;
-		$photo=0;
-		$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-		// Check if $uploadOk is set to 0 by an error
-		if ($uploadOk == 0) {
-		    // echo "Sorry, your file was not uploaded.";
-		// if everything is ok, try to upload file
-		} else {
-		    if (move_uploaded_file($_FILES["_photo"]["tmp_name"], $target_file)) {
-		        $photo=$userId."_photo".".".end($temp);
-		        // echo "DONE";
-		    } else {
-		       	$photo=0;
-		       	// echo "S";
-		    }
+			$target_file = $target_dir . $userId."_photo".".".end($temp);
+			$photo=$target_file;
+			$uploadOk = 1;
+			$photo=0;
+			$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+			// Check if $uploadOk is set to 0 by an error
+			if ($uploadOk == 0) {
+			    // echo "Sorry, your file was not uploaded.";
+			// if everything is ok, try to upload file
+			} else {
+			    if (move_uploaded_file($_FILES["_photo"]["tmp_name"], $target_file)) {
+			        $photo=$userId."_photo".".".end($temp);
+			        // echo "DONE";
+			    } else {
+			       	$photo=0;
+			       	// echo "S";
+			    }
+			}
+
 		}
 
 		//category file upload
@@ -163,23 +163,24 @@
 				echo 104;
 				exit();
 			}
-		}
 		
-		$target_file = $target_dir . $userId."_categoryCertificate".".".end($temp);
-		$categoryCertificate=$target_file;
-		$uploadOk = 1;
-		$categoryCertificate=0;
-		$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-		// Check if $uploadOk is set to 0 by an error
-		if ($uploadOk == 0) {
-		    // echo "Sorry, your file was not uploaded.";
-		// if everything is ok, try to upload file
-		} else {
-		    if (move_uploaded_file($_FILES["_categoryCertificate"]["tmp_name"], $target_file)) {
-		        $categoryCertificate=$userId."_categoryCertificate".".".end($temp);
-		    } else {
-		       	$categoryCertificate=0;
-		    }
+			$target_file = $target_dir . $userId."_categoryCertificate".".".end($temp);
+			$categoryCertificate=$target_file;
+			$uploadOk = 1;
+			$categoryCertificate=0;
+			$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+			// Check if $uploadOk is set to 0 by an error
+			if ($uploadOk == 0) {
+			    // echo "Sorry, your file was not uploaded.";
+			// if everything is ok, try to upload file
+			} else {
+			    if (move_uploaded_file($_FILES["_categoryCertificate"]["tmp_name"], $target_file)) {
+			        $categoryCertificate=$userId."_categoryCertificate".".".end($temp);
+			    } else {
+			       	$categoryCertificate=0;
+			    }
+			}
+
 		}
 
 		//disability
@@ -192,23 +193,23 @@
 				echo 105;
 				exit();
 			}
-		}
 		
-		$target_file = $target_dir . $userId."_disabilityCertificate".".".end($temp);
-		$disabilityCertificate=$userId."_disabilityCertificate".".".end($temp);
-		$uploadOk = 1;
-		// echo $target_dir;
-		$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-		// Check if $uploadOk is set to 0 by an error
-		if ($uploadOk == 0) {
-		    // echo "Sorry, your file was not uploaded.";
-		// if everything is ok, try to upload file
-		} else {
-		    if (move_uploaded_file($_FILES["_disabilityCertificate"]["tmp_name"], $target_file)) {
-		        	$disabilityCertificate=$userId."_disabilityCertificate".".".end($temp);
-		    } else {
-		        $disabilityCertificate=0;
-		    }
+			$target_file = $target_dir . $userId."_disabilityCertificate".".".end($temp);
+			$disabilityCertificate=$userId."_disabilityCertificate".".".end($temp);
+			$uploadOk = 1;
+			// echo $target_dir;
+			$imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
+			// Check if $uploadOk is set to 0 by an error
+			if ($uploadOk == 0) {
+			    // echo "Sorry, your file was not uploaded.";
+			// if everything is ok, try to upload file
+			} else {
+			    if (move_uploaded_file($_FILES["_disabilityCertificate"]["tmp_name"], $target_file)) {
+			        	$disabilityCertificate=$userId."_disabilityCertificate".".".end($temp);
+			    } else {
+			        $disabilityCertificate=0;
+			    }
+			}
 		}
 
 		//data validation

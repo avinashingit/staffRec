@@ -68,6 +68,10 @@ function checkData(data)
 	}
 	else if(data==101)
 	{
+		alert("Please check your phone number.");
+	}
+	else if(data==1001)
+	{
 		alert("Please check your date of birth");
 	}
 	else if(data==102)
@@ -76,7 +80,7 @@ function checkData(data)
 	}
 	else if(data==103)
 	{
-		alert("Photo can be either jpg or jpeg or png only");
+		alert("Photo should be jpg file");
 	}
 	else if(data==104)
 	{
@@ -157,10 +161,10 @@ function validateDate(e)
 function check_file_image(id)
 {
     var suffix=new Array();
-    suffix[0]="png";
-    suffix[1]="jpeg";
+    suffix[0]="jpg";
+    /*suffix[1]="jpeg";
     suffix[2]="gif";
-    suffix[3]="jpg";
+    suffix[3]="jpg";*/
     var error=1;
     var sFileName=document.getElementById(id).value;
     var sFileExtension = sFileName.split('.')[sFileName.split('.').length - 1].toLowerCase();
@@ -221,7 +225,7 @@ function register(e)
 {
 	e.preventDefault();
 	var link=$("#registerForm");
-	link.find('button').attr('disabled',"disabled").html('Registering');
+	
 	var name=link.find("#inputName").val();
 	var email=link.find('#inputEmail').val();
 	var password=link.find("#inputPassword").val();
@@ -234,6 +238,7 @@ function register(e)
 	}
 	else
 	{
+		link.find('button').attr('disabled',"disabled").html('Registering');
 		$.post('includes/backend/register.php',{
 			_name:name,
 			_email:email,
@@ -247,10 +252,11 @@ function register(e)
 			if(checkData(data)==1)
 			{
 				alert("Registration done successfully. Please check your email for confirmation.");
+				link.find('button').removeAttr('disabled').html('Register');
 			}
 			else
 			{
-				link.find('button').attr('disabled',"").html('Register');
+				link.find('button').removeAttr('disabled').html('Register');
 			}
 		});
 	}
@@ -281,8 +287,6 @@ function checkIfEmailExists(el)
 			}
 		});
 	}
-
-	
 }
 
 function checkIfUsernameExists(el)
@@ -309,7 +313,6 @@ function checkIfUsernameExists(el)
 			}
 		});
 	}
-	
 }
 
 
@@ -446,9 +449,7 @@ function fillPersonalDetails(data)
 	link.find("#currentAddressLine2").val(currentAddress[1]);
 	link.find("#currentPhone").val(currentAddress[2]);
 	link.find("#currentEmail").val(currentAddress[3]);
-	//pmasaca
-	var element=$("#pmasaca");
-	var pmasaca=element.is(":checked");
+	
 
 	var permanentAddress=data.permanentAddress.split("$%^");
 	link.find("#permanentAddressLine1").val(permanentAddress[0]);

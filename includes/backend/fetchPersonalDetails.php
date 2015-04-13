@@ -20,7 +20,7 @@
 
 		$photo=0;
 
-		if(file_exists(__DIR__."/../../files/".$row[15]))
+		if(file_exists(__DIR__."/../../files/".$userId."_photo.jpg"))
 		{
 			$photo=1;
 		}
@@ -31,7 +31,7 @@
 
 		$categoryCertificate=0;
 
-		if(file_exists(__DIR__."/../../files/".$row[16]))
+		if(file_exists(__DIR__."/../../files/".$userId."_categoryCertificate.pdf"))
 		{
 			$categoryCertificate=1;
 		}
@@ -42,7 +42,7 @@
 
 		$disabilityCertificate=0;
 
-		if(file_exists(__DIR__."/../../files/".$row[17]))
+		if(file_exists(__DIR__."/../../files/".$userId."_disabilityCertificate.pdf"))
 		{
 			$disabilityCertificate=1;
 		}
