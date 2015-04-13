@@ -266,6 +266,8 @@ function checkIfEmailExists(el)
 {
 	var email=$(el).val().trim();
 
+	var link=$("#registerForm");
+
 	if(email.length!=0)
 	{
 		$.post('includes/backend/checkIfEmailExists.php',{
@@ -279,10 +281,20 @@ function checkIfEmailExists(el)
 				if(data==1)
 				{
 					$('.emailMessage').html("<i class='fa fa-check'></i>&nbsp;You can carry on to register.").css({'color':'green'});
+
+					link.find('button').removeAttr('disabled');
+				}
+				else if(data==9892)
+				{
+					$('.emailMessage').html("<i class='fa fa-close'></i>&nbsp;Enter a valid email.").css({'color':'#E62727'});
+
+					link.find('button').attr('disabled',"disabled");
 				}
 				else
 				{
 					$('.emailMessage').html("<i class='fa fa-close'></i>&nbsp;Email is already registered.").css({'color':'#E62727'});
+
+					link.find('button').attr('disabled',"disabled");
 				}
 			}
 		});
@@ -292,6 +304,7 @@ function checkIfEmailExists(el)
 function checkIfUsernameExists(el)
 {
 	var username=$(el).val().trim();
+	var link=$("#registerForm");
 	if(username.length!=0)
 	{
 		$.post('includes/backend/checkIfUsernameExists.php',{
@@ -305,10 +318,14 @@ function checkIfUsernameExists(el)
 				if(data==1)
 				{
 					$('.usernameMessage').html("<i class='fa fa-check'></i>&nbsp;Username is available.").css({'color':'green'});
+
+					link.find('button').removeAttr('disabled');
 				}
 				else
 				{
 					$('.usernameMessage').html("<i class='fa fa-close'></i>&nbsp;Username is already taken.").css({'color':'#E62727'});
+
+					link.find('button').attr('disabled',"disabled");
 				}
 			}
 		});
