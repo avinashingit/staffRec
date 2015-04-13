@@ -66,6 +66,7 @@
 					<div class="col-lg-7">
 
 						<input class="form-control" type="file" name="fileSOP" id="fileSOP">
+						<p>Only pdf files allowed.</p>
 
 						<p class="hidden" id="uploadedSOP">You already uploaded. Uploading again will rewrite the previous one.</p>
 

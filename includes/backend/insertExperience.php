@@ -27,11 +27,25 @@
 			$scale[$i]=removeUnwanted($scale[$i]);
 			$nature[$i]=removeUnwanted($nature[$i]);
 
-			if(validateDOB($from[$i])!=1 || validateDOB($to[$i])!=1)
+			if($from[$i]!="")
 			{
-				echo 113;
-				exit();
+				if(validateDOB($from[$i])!=1)
+				{
+					echo 113;
+					exit();
+				}
 			}
+
+			if($to[$i]!="")
+			{
+				if(validateDOB($to[$i])!=1)
+				{
+					echo 113;
+					exit();
+				}
+			}
+
+			
 		}
 
 		$sql=sprintf("UPDATE personaldetails SET noYE='%d' WHERE userId='%s'",$_POST['_noYE'],$userId);

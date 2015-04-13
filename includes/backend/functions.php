@@ -176,14 +176,21 @@
 			$errorString.="<li>Father/Spouse name cannot be empty in personal details.</li><br/>";
 		}
 
-		if($row['photo']==0)
+		if(!file_exists(__DIR__."/../../files/".$userId."_photo.jpg"))
 		{
 			$errorString.="<li>Photo has not been uploaded.</li><br/>";
 		}
 
+		
+
+		/*if(!file_exists(__DIR__."/../../files/".$userId."_disabilityCertificate.pdf"))
+		{
+			$errorString.="<li>Disability certificate has not been uploaded.</li><br/>";
+		}*/
+
 		if($row['category']==1||$row['category']==2||$row['category']==3)
 		{
-			if($row['categoryCerti']==0)
+			if(!file_exists(__DIR__."/../../files/".$userId."_categoryCertificate.pdf"))
 			{
 				$errorString.="<li>Category certificate has not been uploaded.</li><br/>";
 			}

@@ -705,11 +705,13 @@ function insertNewEducationalRow(e,type)
 
 			input+='<td><select class="form-control degree">';
 				input+='<option value="0">Select</option>';
-				input+='<option value="1">Diploma</option>';
-				input+='<option value="2">B.Tech/B.E</option>';
-				input+='<option value="3">B.Sc/B.Com/B.A/BLIS</option>';
-				input+='<option value="4">M.E/M.Tech</option>';
-				input+='<option value="5">M.Com/M.Sc/M.A/MLIS</option>';
+				input+='<option value="1">Secondary</option>';
+				input+='<option value="2">Higher Secondary</option>';
+				input+='<option value="3">Diploma</option>';
+				input+='<option value="4">B.Tech/B.E</option>';
+				input+='<option value="5">B.Sc/B.Com/B.A/BLIS</option>';
+				input+='<option value="6">M.E/M.Tech</option>';
+				input+='<option value="7">M.Com/M.Sc/M.A/MLIS</option>';
 			input+='</select></td>';
 
 			input+='<td><input class="form-control branch"></td>';
@@ -1382,6 +1384,25 @@ function submit(e)
 
 		}
 	});
+}
 
 
+/******************************FORGOT PASSWORD*******************************/
+
+function sendLink(e)
+{
+	e.preventDefault();
+
+	var email=$("#FPForm").find("#emailFP").val().trim();
+
+	$.post('sendPLink.php',{
+		_email:email
+	})
+	.error()
+	.success(function(data){
+		if(checkData(data)==1)
+		{
+			alert("Send password link.");
+		}
+	});
 }
